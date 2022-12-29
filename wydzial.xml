@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Wydzial nazwa="WEAIiIB">
+    <Budynki>
+        <Budynek nazwa="C200">
+            <LiczbaPokoi>10</LiczbaPokoi>
+            <Adres>ul. Polna 1</Adres>
+        </Budynek>
+        <Budynek nazwa="C201">
+            <LiczbaPokoi>15</LiczbaPokoi>
+            <Adres>ul. Polna 3</Adres>
+        </Budynek>
+    </Budynki>
+    <Pracownicy>
+        <Pracownik imie="Jan" nazwisko="Kowalski">
+            <Wiek>30</Wiek>
+        </Pracownik>
+        <Pracownik imie="Arystoteles" nazwisko="Stagiryta">
+            <Wiek>50</Wiek>
+        </Pracownik>
+    </Pracownicy>
+    <Studenci>
+        <Student imie="Patryk" nazwisko="Knapek">
+            <Wiek>20</Wiek>
+        </Student>
+        <Student imie="Jan" nazwisko="Nowak">
+            <Wiek>20</Wiek>
+        </Student>
+    </Studenci>
+</Wydzial>
