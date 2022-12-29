@@ -45,4 +45,9 @@ public class Osoba {
     public int pobierzWiek() {
         return wiek;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Osoba: %s %s, wiek: %d", imie, nazwisko, wiek);
+    }
 }

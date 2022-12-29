@@ -4,6 +4,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class App
@@ -11,6 +12,10 @@ public class App
     public static void main( String[] args ) {
         try {
             marshal();
+
+            Wydzial odczytanyWydzial = unmarshal();
+
+            System.out.println(odczytanyWydzial.toString());
         } catch (JAXBException | IOException e) {
             e.printStackTrace();
         }
@@ -25,10 +30,16 @@ public class App
         wydzial.dodajPracownika(new Osoba("Arystoteles", "Stagiryta", 50));
         wydzial.dodajStudenta(new Osoba("Patryk", "Knapek", 20));
         wydzial.dodajStudenta(new Osoba("Jan", "Nowak", 20));
+        wydzial.dodajStudenta(new Osoba("Razogarz", "Nowak", 20));
 
         JAXBContext context = JAXBContext.newInstance(Wydzial.class);
         Marshaller mar= context.createMarshaller();
         mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         mar.marshal(wydzial, new File("./wydzial.xml"));
+    }
+
+    public static Wydzial unmarshal() throws JAXBException, IOException {
+        JAXBContext context = JAXBContext.newInstance(Wydzial.class);
+        return (Wydzial) context.createUnmarshaller().unmarshal(new FileReader("./wydzial.xml"));
     }
 }

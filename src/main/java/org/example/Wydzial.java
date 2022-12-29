@@ -118,4 +118,38 @@ public class Wydzial {
     public List<Osoba> pobierzStudentow() {
         return studenci.pobierzStudentow();
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(String.format("Wydzial: %s%nPodaję listę budynków:%n", nazwa));
+
+        if (budynki.pobierzBudynki().isEmpty()) {
+            sb.append("NIC\nPozdrawiam\n");
+        } else {
+            for (Budynek budynek : budynki.pobierzBudynki()) {
+                sb.append(String.format("%s%n", budynek.toString()));
+            }
+        }
+
+        sb.append("\nPodaję listę pracowników:\n");
+        if (pracownicy.pobierzPracownikow().isEmpty()) {
+            sb.append("NIKT\nPozdrawiam\n");
+        } else {
+            for (Osoba pracownik : pracownicy.pobierzPracownikow()) {
+                sb.append(String.format("%s%n", pracownik.toString()));
+            }
+        }
+
+        sb.append("\nPodaję listę studentów:\n");
+        if (studenci.pobierzStudentow().isEmpty()) {
+            sb.append("NIKT\nPozdrawiam\n");
+        } else {
+            for (Osoba student : studenci.pobierzStudentow()) {
+                sb.append(String.format("%s%n", student.toString()));
+            }
+        }
+
+        return sb.toString();
+    }
 }

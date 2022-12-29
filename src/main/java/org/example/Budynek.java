@@ -45,4 +45,9 @@ public class Budynek {
     public int pobierzLiczbePokoi() {
         return liczbaPokoi;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Budynek: %s, adres: %s, liczba pokoi: %d", nazwa, adres, liczbaPokoi);
+    }
 }

@@ -25,5 +25,8 @@
         <Student imie="Jan" nazwisko="Nowak">
             <Wiek>20</Wiek>
         </Student>
+        <Student imie="Razogarz" nazwisko="Nowak">
+            <Wiek>20</Wiek>
+        </Student>
     </Studenci>
 </Wydzial>
