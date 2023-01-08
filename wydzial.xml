@@ -17,6 +17,9 @@
         <Pracownik imie="Arystoteles" nazwisko="Stagiryta">
             <Wiek>50</Wiek>
         </Pracownik>
+        <Pracownik imie="Baruch" nazwisko="Spinoza">
+            <Wiek>50</Wiek>
+        </Pracownik>
     </Pracownicy>
     <Studenci>
         <Student imie="Patryk" nazwisko="Knapek">

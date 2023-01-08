@@ -9,7 +9,6 @@ import java.io.IOException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -47,6 +46,7 @@ public class App {
         wydzial.dodajBudynek(new Budynek("C201", "ul. Polna 3", 15));
         wydzial.dodajPracownika(new Osoba("Jan", "Kowalski", 30));
         wydzial.dodajPracownika(new Osoba("Arystoteles", "Stagiryta", 50));
+        wydzial.dodajPracownika(new Osoba("Baruch", "Spinoza", 30));
         wydzial.dodajStudenta(new Osoba("Patryk", "Knapek", 20));
         wydzial.dodajStudenta(new Osoba("Jan", "Nowak", 20));
         wydzial.dodajStudenta(new Osoba("Razogarz", "Nowak", 20));
