@@ -13,9 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.*;
 
 public class App {
     public static void main(String[] args) {
@@ -30,6 +28,12 @@ public class App {
 
             if (odczytanyWydzialDOM != null) {
                 System.out.println(odczytanyWydzialDOM.toString());
+            }
+
+            Wydzial odczytanySAX = SAX_read();
+
+            if (odczytanySAX != null) {
+                System.out.println(odczytanySAX.toString());
             }
         } catch (JAXBException | IOException e) {
             e.printStackTrace();
@@ -110,6 +114,26 @@ public class App {
             }
 
             return wydzial;
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static Wydzial SAX_read() {
+        try {
+            // stworzenie fabryki i parsera
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+            WydzialSAXHandler wydzialSAXHandler = new WydzialSAXHandler();
+
+            // parsowanie
+            saxParser.parse("./wydzial.xml", wydzialSAXHandler);
+
+            Wydzial result = wydzialSAXHandler.getWydzial();
+
+            return result;
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
